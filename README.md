@@ -43,3 +43,6 @@ publicフォルダと同じ扱い。webから直接アクセスされる個所
 
 ### App.config
 DBの設定ファイル(予定)
+
+## dotnet toolのインストール
+dotnet tool install --global dotnet-ef
