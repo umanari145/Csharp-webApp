@@ -56,10 +56,6 @@ namespace WebApplication1
                     name: "getItems",
                     pattern: "{controller=Item}/{action=List}");
 
-                endpoints.MapControllerRoute(
-                    name: "addItem",
-                    pattern: "{controller=Item}/{action=Add}/{id?}");
-
             });
         }
     }

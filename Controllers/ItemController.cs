@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using log4net;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -7,16 +8,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Models;
 
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config", Watch = true)]
+
 namespace WebApplication1.Controllers
 {
     [Route("[controller]/[action]")]
     public class ItemController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILog _logger;
 
-        public ItemController(ILogger<HomeController> logger)
+        public ItemController()
         {
-            _logger = logger;
+            _logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
 
         [Route("/Item/List")]
