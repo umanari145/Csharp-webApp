@@ -4,6 +4,9 @@
 ASP.NET Core Webアプリ(Model-View-Controller)
 3.1で生成
 
+DBはentityframework core 5(SQLServer)を採用
+
+
 ## ファイル説明
 ### Startup.cs
 エントリーポイントかつルーティングの記載(後ほど分解する必要があるかも・・・)
@@ -23,8 +26,11 @@ Entity
 ### Service
 Service
 
-### Utils
-DBの接続など
+### Migrations
+マイグレーションファイル作成
+
+### Data
+DataContext(DBの接続窓口)
 
 ### Views
 HTMLテンプレートファイル
@@ -70,6 +76,14 @@ Migrations以下にMigrationsファイル作成
 #### migrations実行
 
 dotnet ef database update
+
+成功時のメッセージ
+```
+Build started...
+Build succeeded.
+Applying migration '20220122132233_CustomCreate'.
+Done.
+```
 
 #### migrationsの詳細なコマンド
 https://docs.microsoft.com/ja-jp/ef/core/cli/dotnet

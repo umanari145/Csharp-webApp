@@ -24,15 +24,10 @@ namespace WebApplication1
             Configuration = configuration;
         }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            /*services.AddDbContext<DataContext>(
-                options => options.UseSqlServer("name=ConnectionStrings:sqlserver"));
-            */
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
