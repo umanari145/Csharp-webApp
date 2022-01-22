@@ -36,12 +36,20 @@ namespace WebApplication1.Data
 
         public DbSet<Item> Items { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>().HasData(
                 new Item { Id = "0000000001", Name = "Book", Price = 1000 },
                 new Item { Id = "0000000002", Name = "Pen", Price = 500 },
                 new Item { Id = "0000000003", Name = "Laptop", Price = 300 }
+            );
+
+            modelBuilder.Entity<Customer>().HasData(
+                new Customer { Id = "cus0000001", Name = "Yamada", },
+                new Customer { Id = "cus0000002", Name = "Suzuki"},
+                new Customer { Id = "cus0000003", Name = "Watanabe"  }
             );
         }
     }

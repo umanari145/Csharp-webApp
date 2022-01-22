@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class Customer
+    public class Item
     {
         [Key]
         public string Id { get; set; }
 
         [Required]
         public string Name { get; set; }
+        public int Price { get; set; }
     }
 }
