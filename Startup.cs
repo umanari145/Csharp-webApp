@@ -10,24 +10,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Service;
+using WebApplication1.Data;
+using System.Configuration;
 
 namespace WebApplication1
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<MyContext>(
+            /*services.AddDbContext<DataContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:sqlserver"));
+            */
 
         }
 
@@ -63,5 +67,8 @@ namespace WebApplication1
 
             });
         }
+
     }
+
+
 }

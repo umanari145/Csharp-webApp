@@ -38,11 +38,9 @@ publicフォルダと同じ扱い。webから直接アクセスされる個所
 ### プロジェクト名.csproj.user
 自動生成されるレベルで、あまり意識しなくてもよい
 
-### App.config
-DBの設定ファイル(予定)
 
 ### appsettings.json
-Migrationsの情報はここから読み取る
+ASP.NET Core ではweb.configがなく、代わりにappsettings.jsonから読み込む
 
 ### Migrationsについて
 コマンドはすべてアプリケーションディレクトリで実行

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication1.Data;
 using WebApplication1.Models;
 using WebApplication1.Service;
 
@@ -18,6 +19,7 @@ namespace WebApplication1.Controllers
     {
         private readonly ILog _logger;
 
+        //private readonly ItemContext _context;
         public ItemController()
         {
             _logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -26,9 +28,11 @@ namespace WebApplication1.Controllers
         [Route("/Item/List")]
         public IActionResult GetItemsList()
         {
-            MyContext sc = new MyContext();
-            sc.addProduct();
-            _logger.Info("info log.");
+            _logger.Info("start log.");
+
+            ItemService itemService = new ItemService();
+            itemService.GetAllItems();
+
             return View();
         }
     }
