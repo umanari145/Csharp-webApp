@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Utils\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Views\新しいフォルダー\" />
   </ItemGroup>
 
